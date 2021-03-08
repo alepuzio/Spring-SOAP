@@ -1,4 +1,4 @@
-package net.alepuzio.springsoap;
+package net.alepuzio.springsoap.server;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
