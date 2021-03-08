@@ -10,7 +10,7 @@ public class CountryClientConfig {
     @Bean
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("net.alepuzio.springsoap.gen");
+        marshaller.setContextPath("net.alepuzio.springsoap");
         return marshaller;
     }
     @Bean

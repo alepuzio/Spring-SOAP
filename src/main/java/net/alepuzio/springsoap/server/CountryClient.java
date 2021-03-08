@@ -2,8 +2,8 @@ package net.alepuzio.springsoap.server;
 
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
-import net.alepuzio.springsoap.gen.GetCountryRequest;
-import net.alepuzio.springsoap.gen.GetCountryResponse;
+import net.alepuzio.springsoap.GetCountryRequest;
+import net.alepuzio.springsoap.GetCountryResponse;
 
 public class CountryClient extends WebServiceGatewaySupport {
 

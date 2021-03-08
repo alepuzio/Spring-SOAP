@@ -8,8 +8,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
-import net.alepuzio.springsoap.gen.Country;
-import net.alepuzio.springsoap.gen.Currency;
+import net.alepuzio.springsoap.Country;
+import net.alepuzio.springsoap.Currency;
 
 /*
  * https://spring.io/guides/gs/producing-web-service/

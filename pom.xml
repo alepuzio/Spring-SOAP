@@ -81,7 +81,7 @@
 				<configuration>
 					<sources>
 						<source>${basedir}/src/main/resources/countries.xsd</source>
-						<packageName>net.alepuzio.springsoap.gen</packageName>
+						<packageName>net.alepuzio.springsoap</packageName>
 					</sources>
 				</configuration>
 			</plugin>
@@ -99,7 +99,7 @@
 				</executions>
 				<configuration>
 					<schemaLanguage>WSDL</schemaLanguage>
-					<generatePackage>net.alepuzio.springsoap.client.gen</generatePackage>
+					<generatePackage>net.alepuzio.springsoap.client</generatePackage>
 					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
 					<schemaIncludes>
 						<include>countries.wsdl</include>
