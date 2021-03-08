@@ -1,7 +1,6 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 			xmlns:tns="http://alepuzio.net/springsoap"
-          	targetNamespace="http://alepuzio.net/springsoap" 
-          	elementFormDefault="qualified">
+          	targetNamespace="http://alepuzio.net/springsoap" elementFormDefault="qualified">
 <!--  https://spring.io/guides/gs/producing-web-service/ -->
     <xs:element name="getCountryRequest">
         <xs:complexType>
