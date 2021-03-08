@@ -1,5 +1,3 @@
-<!-- https://spring.io/guides/gs/producing-web-service/ -->
-
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 				  xmlns:gs="http://alepuzio.net/springsoap">
    <soapenv:Header/>
