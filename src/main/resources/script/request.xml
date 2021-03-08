@@ -1,29 +1,18 @@
-<!-- https://spring.io/guides/gs/producing-web-service/ -->
-
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-				  xmlns:gs="http://alepuzio.net/springsoap/gen">
-   <soapenv:Header/>
-   <soapenv:Body>
-   <gs:getCountryRequest> 
-         <gs:name>Spain</gs:name>
-      </gs:getCountryRequest>
-<!--          <gs:getCountryRequest_not_mapped_in_xsd> not existing tag creates message "no endpoint mapping" with the path of the tag and https status 200 
-         <gs:name>Spain</gs:name>
-      </gs:getCountryRequest_not_mapped_in_xsd>
- --><!--       <gs:getCountryRequest> absent request creates message "no endpoint mapping" but http status is 200
-         <gs:name></gs:name>
-      </gs:getCountryRequest>
- --><!--       <gs:getCountryRequest> the empty value in existing tag pass emptry string
-         <gs:name></gs:name>
-      </gs:getCountryRequest>
- --><!--       <gs:getCountryRequest>
-         <gs:name>Italy</gs:name>
-      </gs:getCountryRequest>
- --><!--     if the coutnry is not recorded, then the https status is 200 and the value is empty  <gs:getCountryRequest> 
-         <gs:name>Italy</gs:name>
-      </gs:getCountryRequest> -->
-  <!-- only the first Request is managed     <gs:getCountryRequest>
-         <gs:name>Poland</gs:name>
-      </gs:getCountryRequest>
- -->   </soapenv:Body>
+	xmlns:gs="http://alepuzio.net/springsoap/">
+	<soapenv:Header />
+	<soapenv:Body>
+		<gs:getCountryRequest>
+			<gs:name>Spain</gs:name>
+		</gs:getCountryRequest>
+		<!-- <gs:getCountryRequest_not_mapped_in_xsd> not existing tag creates 
+			message "no endpoint mapping" with the path of the tag and https status 200 
+			<gs:name>Spain</gs:name> </gs:getCountryRequest_not_mapped_in_xsd> --><!-- <gs:getCountryRequest> absent request creates message "no endpoint 
+			mapping" but http status is 200 <gs:name></gs:name> </gs:getCountryRequest> --><!-- <gs:getCountryRequest> the empty value in existing tag pass emptry 
+			string <gs:name></gs:name> </gs:getCountryRequest> --><!-- <gs:getCountryRequest> <gs:name>Italy</gs:name> </gs:getCountryRequest> --><!-- if the coutnry is not recorded, then the https status is 200 and the 
+			value is empty <gs:getCountryRequest> <gs:name>Italy</gs:name> </gs:getCountryRequest> -->
+		<!-- only the first Request is managed <gs:getCountryRequest> <gs:name>Poland</gs:name> 
+			</gs:getCountryRequest> -->
+	</soapenv:Body>
 </soapenv:Envelope>
+<!-- https://spring.io/guides/gs/producing-web-service/ -->

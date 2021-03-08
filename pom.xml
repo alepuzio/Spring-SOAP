@@ -81,7 +81,7 @@
 				<configuration>
 					<sources>
 						<source>${basedir}/src/main/resources/countries.xsd</source>
-						<packageName>net.alepuzio.springsoap.gen</packageName>
+						<packageName>net.alepuzio.springsoap</packageName>
 					</sources>
 				</configuration>
 			</plugin>
