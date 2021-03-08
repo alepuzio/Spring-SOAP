@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.alepuzio</groupId><!--  https://spring.io/guides/gs/producing-web-service/  -->
+	<groupId>net.alepuzio</groupId><!-- https://spring.io/guides/gs/producing-web-service/ -->
 	<artifactId>spring_soap</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -60,7 +60,6 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -76,16 +75,37 @@
 						<goals>
 							<goal>xjc</goal>
 						</goals>
+				                    <phase>generate-sources</phase>
 					</execution>
 				</executions>
 				<configuration>
 					<sources>
-						<source>src/main/resources/countries.xsd</source>
-						<packageName>net.alepuzio.springsoap.myschema</packageName>
+						<source>${basedir}/src/main/resources/countries.xsd</source>
+						<packageName>net.alepuzio.springsoap.gen</packageName>
 					</sources>
 				</configuration>
 			</plugin>
 			<!-- end::xsd[] -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.14.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaLanguage>WSDL</schemaLanguage>
+					<generatePackage>net.alepuzio.springsoap.client.gen</generatePackage>
+					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+					<schemaIncludes>
+						<include>countries.wsdl</include>
+					</schemaIncludes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
