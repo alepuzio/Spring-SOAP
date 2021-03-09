@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.alepuzio</groupId><!-- https://spring.io/guides/gs/producing-web-service/ -->
+	<groupId>net.alepuzio</groupId><!-- from https://spring.io/guides/gs/producing-web-service/ -->
 	<artifactId>spring_soap</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -81,7 +81,7 @@
 				<configuration>
 					<sources>
 						<source>${basedir}/src/main/resources/countries.xsd</source>
-						<packageName>io.spring.springsoap.gen</packageName>
+						<packageName>net.alepuzio.springsoap.gen</packageName><!-- io.spring.springsoap.gen -->
 					</sources>
 				</configuration>
 			</plugin>
@@ -99,7 +99,7 @@
 				</executions>
 				<configuration>
 					<schemaLanguage>WSDL</schemaLanguage>
-					<generatePackage>io.spring.springsoap.client</generatePackage>
+					<generatePackage>net.alepuzio.springsoap.client</generatePackage><!-- io.spring.springsoap.client -->
 					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
 					<schemaIncludes>
 						<include>countries.wsdl</include>

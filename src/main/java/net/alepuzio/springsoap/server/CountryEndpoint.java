@@ -7,15 +7,16 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import io.spring.guides.gs_producing_web_service.GetCountryRequest;
-import io.spring.guides.gs_producing_web_service.GetCountryResponse;
+import net.alepuzio.springsoap.GetCountryRequest;
+import net.alepuzio.springsoap.GetCountryResponse;
+
 
 /*
  * https://spring.io/guides/gs/producing-web-service/
  * */
 @Endpoint
 public class CountryEndpoint {
-	private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";//"http://alepuzio.net/springsoap";
+	private static final String NAMESPACE_URI = "http://alepuzio.net/springsoap";//"http://spring.io/guides/gs-producing-web-service";
 
 	private CountryRepository countryRepository;
 

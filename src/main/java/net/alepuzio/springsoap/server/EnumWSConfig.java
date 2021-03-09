@@ -2,14 +2,14 @@ package net.alepuzio.springsoap.server;
 
 public enum EnumWSConfig {
 
-	TARGET_NAMESPACE("http://spring.io/guides/gs-producing-web-service"),
-	//TARGET_NAMESPACE("http://alepuzio.net/springsoap"),
+	//TARGET_NAMESPACE("http://spring.io/guides/gs-producing-web-service"),
+	TARGET_NAMESPACE("http://alepuzio.net/springsoap"),
 	LOCATION_URI("/ws"),
 	PORT_TYPE_NAME("CountriesPort"),
 	XSD_DECLARATION("countries.xsd"),
 	URL_MAPPING("/ws/*"),
 	DEFAULT_URI("http://localhost:8080/ws"),
-	CONTEXT_PATH("io.spring.guides.gs_producing_web_service")//net.alepuzio.springsoap
+	CONTEXT_PATH("net.alepuzio.springsoap")//io.spring.guides.gs_producing_web_service
 	;
 	
 	private EnumWSConfig(String newValue) {
