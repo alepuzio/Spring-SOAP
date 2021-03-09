@@ -16,6 +16,35 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+<profiles>
+    <!-- The configuration of the development profile -->
+    <profile>
+        <id>dev</id>
+        <!-- The development profile is active by default -->
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <build.profile.id>development</build.profile.id>
+        </properties>
+    </profile>
+    <!-- The configuration of the production profile -->
+    <profile>
+        <id>prod</id>
+        <properties>
+            <build.profile.id>production</build.profile.id>
+        </properties>
+    </profile>
+    <!-- The configuration of the testing profile -->
+    <profile>
+        <id>test</id>
+        <properties>
+            <build.profile.id>testing</build.profile.id>
+        </properties>
+    </profile>
+</profiles>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -75,7 +104,7 @@
 						<goals>
 							<goal>xjc</goal>
 						</goals>
-				                    <phase>generate-sources</phase>
+						<phase>generate-sources</phase>
 					</execution>
 				</executions>
 				<configuration>
@@ -99,13 +128,47 @@
 				</executions>
 				<configuration>
 					<schemaLanguage>WSDL</schemaLanguage>
-					<generatePackage>net.alepuzio.springsoap.client</generatePackage><!-- io.spring.springsoap.client -->
+					<generatePackage>net.alepuzio.springsoap.client</generatePackage><!-- 
+						io.spring.springsoap.client -->
 					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
 					<schemaIncludes>
 						<include>countries.wsdl</include>
 					</schemaIncludes>
 				</configuration>
 			</plugin>
+            <!-- display active profile in compile phase -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-help-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>show-profiles</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>active-profiles</goal>
+                        </goals>
+                         <configuration>
+                        <tasks>
+                            <echo>current active profile: ${myProfile}</echo>
+                        </tasks>
+                    </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+			
 		</plugins>
+<filters>
+    <!--
+        Ensures that the config.properties file is always loaded from the
+        configuration directory of the active Maven profile.
+    -->
+    <filter>${basedir}/src/main/resources/config/env-personal-${build.profile.id}.properties</filter>
+</filters>
+<resources>
+    <resource>
+        <filtering>true</filtering>
+        <directory>src/main/resources</directory>
+    </resource>
+</resources>
 	</build>
 </project>
