@@ -135,9 +135,17 @@
     <directory>src/main/resources/config/${build.profile.id}</directory>
     <includes>
       <include>application.properties</include>
-      <include>src/main/resources/profile.properties</include>
     </includes>
   </resource>
+    <resource>
+        <filtering>true</filtering>
+    
+    <directory>src/main/resources</directory>
+    <includes>
+          <include>profile.properties</include>
+          <include>countries.xsd</include>
+    </includes>
+    </resource>
 </resources>
 	</build>
 </project>
