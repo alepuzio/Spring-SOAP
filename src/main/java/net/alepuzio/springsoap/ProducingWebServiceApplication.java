@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * */
 @SpringBootApplication
 //@PropertySource({ "classpath:src/main/resources/config/env-${build.profile.id}.properties" })
-@PropertySource({ "classpath:config/env-personal-${build.profile.id}.properties" })
+@PropertySource({ "classpath:application.properties" })
 public class ProducingWebServiceApplication {
 
 	public static void main(String[] args) {
