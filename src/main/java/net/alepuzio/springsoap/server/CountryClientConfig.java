@@ -10,13 +10,13 @@ public class CountryClientConfig {
     @Bean
     public Jaxb2Marshaller marshaller() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setContextPath("net.alepuzio.springsoap");
+        marshaller.setContextPath(EnumWSConfig.CONTEXT_PATH.value());
         return marshaller;
     }
     @Bean
     public CountryClient countryClient(Jaxb2Marshaller marshaller) {
         CountryClient client = new CountryClient();
-        client.setDefaultUri("http://localhost:8080/ws");
+        client.setDefaultUri(EnumWSConfig.DEFAULT_URI.value());
         client.setMarshaller(marshaller);
         client.setUnmarshaller(marshaller);
         return client;

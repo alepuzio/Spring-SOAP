@@ -22,21 +22,21 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext(applicationContext);
 		servlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean<MessageDispatcherServlet>(servlet, "/ws/*");
+		return new ServletRegistrationBean<MessageDispatcherServlet>(servlet,EnumWSConfig.URL_MAPPING.value());
 	}
 
 	@Bean(name = "countries")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("CountriesPort");
-		wsdl11Definition.setLocationUri("/ws");
-		wsdl11Definition.setTargetNamespace(EnumVarious.TARGET_NAMESPACE.value());
+		wsdl11Definition.setPortTypeName(EnumWSConfig.PORT_TYPE_NAME.value());
+		wsdl11Definition.setLocationUri(EnumWSConfig.LOCATION_URI.value());
+		wsdl11Definition.setTargetNamespace(EnumWSConfig.TARGET_NAMESPACE.value());
 		wsdl11Definition.setSchema(countriesSchema);
 		return wsdl11Definition;
 	}
 
 	@Bean
 	public XsdSchema countriesSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
+		return new SimpleXsdSchema(new ClassPathResource(EnumWSConfig.XSD_DECLARATION.value()));
 	}
 }
