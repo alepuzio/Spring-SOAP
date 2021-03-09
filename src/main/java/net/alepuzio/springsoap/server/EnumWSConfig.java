@@ -8,7 +8,7 @@ public enum EnumWSConfig {
 	PORT_TYPE_NAME("CountriesPort"),
 	XSD_DECLARATION("countries.xsd"),
 	URL_MAPPING("/ws/*"),
-	DEFAULT_URI("http://localhost:8080/ws"),
+	DEFAULT_URI("http://localhost:{port}/ws"),
 	CONTEXT_PATH("net.alepuzio.springsoap")//io.spring.guides.gs_producing_web_service
 	;
 	
