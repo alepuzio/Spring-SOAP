@@ -19,7 +19,7 @@ import net.alepuzio.springsoap.GetCountryResponse;
 public class CountryEndpoint {
 
 	//TODO create class
-	private static final String NAMESPACE_URI = "http://alepuzio.net/springsoap";//"http://spring.io/guides/gs-producing-web-service";
+	private static final String NAMESPACE_URI = "http://alepuzio.net/springsoap";//"https://spring.io/guides/gs/producing-web-service/";
 
 	private CountryRepository countryRepository;
 
