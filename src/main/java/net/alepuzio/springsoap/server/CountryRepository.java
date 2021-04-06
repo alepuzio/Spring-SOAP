@@ -15,13 +15,17 @@ import net.alepuzio.springsoap.Currency;
 
 /*
  * https://spring.io/guides/gs/producing-web-service/
+ * 
  * */
-@Component
+@Component//this class is managed by Spring
+/**
+ * @overview: this class allow to read the existing countries
+ * */
 public class CountryRepository {
 	
 	private static final Map<String, Country> countries = new HashMap<String, Country>();
 
-	@PostConstruct
+	@PostConstruct//runned after the constructor
 	public void initDataMock() {
 		Country spain = new Country();
 		spain.setName("Spain");
@@ -43,6 +47,10 @@ public class CountryRepository {
 		countries.put(uk.getName(), uk);
 	}
 
+	/**
+	 * @return the searched country
+	 * @param name: name of the country
+	 * */
 	public Country findCountry(String name) {
 		System.out.println(String.format("CountryRepository.findCountry(%s)", name));
 		System.out.println(String.format("(%s) is null? %s", name, ""+(null == name)));

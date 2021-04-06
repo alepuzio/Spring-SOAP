@@ -7,11 +7,12 @@ import org.springframework.context.annotation.PropertySource;
 /*
  * https://spring.io/guides/gs/producing-web-service/
  * */
-@SpringBootApplication
-//@PropertySource({ "classpath:src/main/resources/config/env-${build.profile.id}.properties" })
-@PropertySource({ "classpath:application.properties" })
+@SpringBootApplication//scan the package and runs the application
+@PropertySource({ "classpath:application.properties" })//load the properties file of the application
 public class ProducingWebServiceApplication {
 
+	/*
+	 * it runs the applications*/
 	public static void main(String[] args) {
 		SpringApplication.run(ProducingWebServiceApplication.class, args);
 	}

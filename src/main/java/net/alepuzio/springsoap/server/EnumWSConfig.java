@@ -1,5 +1,8 @@
 package net.alepuzio.springsoap.server;
 
+/**
+ * @overview enumeration of the constants in the web service infrastructure
+ * */
 public enum EnumWSConfig {
 
 	//TARGET_NAMESPACE("http://spring.io/guides/gs-producing-web-service"),
